@@ -39,3 +39,10 @@
 |`GET`         |     `profile`        |      `/profile/:userId`        | Render `profile`view             | {req.session.userID                    |
 |`POST`        |    `profile`         |      `/profile/edit/user:id` | Send the data updated by the user to the DB. Then render `profile`view  | {req.session.userID, name, age, genre, interests, country, req.file.path}  |
 |`GET`        |    `home`         |      `/profile/:userId` | Render `home`view  |   |
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/52871180/168177847-2a08db2c-2e22-4652-b64a-3cfba619c5b2.png)
+
