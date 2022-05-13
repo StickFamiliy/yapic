@@ -11,12 +11,12 @@
 <form action="/login" method="POST">
 
   <label>Email: </label>
-  <input type="email" name="{{email}}" required placeholder="name@mail.com" />
+  <input type="email" name="email" required placeholder="name@mail.com" />
 
   <br /><br />
 
   <label>Password:</label>
-  <input type="password" name="{{password}}" required placeholder="********"/>
+  <input type="password" name="password" required placeholder="********" />
 
   <br /><br />
 
@@ -24,3 +24,8 @@
   |
   <span>Don't have an account? <a href="/signup">Register</a></span>
 </form>
+
+<br /><br />
+{{#if errorMessage}}
+  <p style="color:#FF0000"><b>{{errorMessage}}</b></p>
+{{/if}}

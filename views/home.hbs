@@ -1,0 +1,10 @@
+<div>
+  <section>
+    {{#each post}}
+    <h5>Description:</h5> <p>{{post.description}}</p>
+     <p>{{post.tags}}</p>
+    <img class="post-img" src="{{post.imageUrl}}" alt="{{post.title}}" />
+    {{/each}}
+  </section>
+</div>
+

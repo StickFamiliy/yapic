@@ -7,33 +7,23 @@ const saltRounds = process.env.SALT || 10;
 
 const User = require('./../models/User.model'); 
 
-const isNotLoggedIn = require('./../middlewares/isNotLoggedIn') 
+const isNotLoggedIn = require('./../middlewares/isNotLoggedIn');
 
-//2 - Create 5 routes: 2 for login, 2 for signup and 1 for logout
 router.get('/signup', isNotLoggedIn, (req, res) => {
 	res.render('auth/signup');
 });
 
 router.post('/signup', isNotLoggedIn, (req, res) => {
-	
 	//GET VALUES FROM FORM
 	const { username, email, password } = req.body;
 
 	//VALIDATE INPUT
-	if (
-		!username ||
-		username === '' ||
-		!password ||
-		password === '' ||
-		!email ||
-		email === '' ||
-		!email.includes('@')
-	) {
+	if (!username || !password || !email) {
 		res.render('auth/signup', { errorMessage: 'Something went wrong, try again.' });
 	}
 
 	//Check if user already exists
-	User.findOne({ username: username })
+	User.findOne({ email })
 		.then((user) => {
 			
 			//If user exists, send error
@@ -46,14 +36,12 @@ router.post('/signup', isNotLoggedIn, (req, res) => {
 				//Hash the password
 				const salt = bcrypt.genSaltSync(saltRounds);
 				const hash = bcrypt.hashSync(password, salt);
-
 				//If user does not exist, create it
 				User.create({ username, email, password: hash })
 					.then((newUser) => {
-
 						console.log(newUser);
 						//Once created, redirect
-						res.redirect('/login');
+						res.redirect(`/home/${newUser._id}`);
 					})
 					.catch((err) => console.log(err));
 			}
@@ -66,21 +54,16 @@ router.get('/login', isNotLoggedIn, (req, res) => {
 });
 
 router.post('/login', isNotLoggedIn, (req, res) => {
+	
 	//GET VALUES FROM FORM
 	const {email, password } = req.body;
 
 	//VALIDATE INPUT
-	if (
-		!password ||
-		password === '' ||
-		!email ||
-		email === '' ||
-		!email.includes('@')
-	) {
-		res.render('auth/signup', { errorMessage: 'Something went wrong, try again.' });
+	if (!email || !password) {
+		res.render('auth/login', { errorMessage: 'Invalid credentials.' });
 	}
 
-	User.findOne({ username })
+	User.findOne({ email })
 		.then((user) => {
 			if (!user) {
 				res.render('auth/login', { errorMessage: 'Input invalid. Please try again.' });
@@ -88,7 +71,7 @@ router.post('/login', isNotLoggedIn, (req, res) => {
 				
 				const encryptedPassword = user.password;
 				const passwordCorrect = bcrypt.compareSync(password, encryptedPassword);
-
+				console.log("pass  " + passwordCorrect)
 				if (passwordCorrect) {
 					req.session.currentUser = user;
 					res.redirect(`/home/${user._id}`);

@@ -32,7 +32,7 @@ const authRoutes = require('./routes/auth-routes');
 app.use('/', authRoutes);
 
 const privateRoutes = require('./routes/private-routes');
-app.use('/', isLoggedIn, privateRoutes);
+app.use('/', privateRoutes);
 
 const index = require('./routes/index');
 app.use('/', index);
