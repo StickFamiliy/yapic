@@ -41,8 +41,3 @@
 |`GET`        |    `home`         |      `/profile/:userId` | Render `home`view  |   |
 
 
-
-
-
-![image](https://user-images.githubusercontent.com/52871180/168177847-2a08db2c-2e22-4652-b64a-3cfba619c5b2.png)
-
