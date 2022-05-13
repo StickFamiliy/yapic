@@ -5,13 +5,13 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const saltRounds = process.env.SALT || 10;
 
-const User = require('../models/User.model'); 
+const User = require('./../models/User.model'); 
 
-const isNotLoggedIn = require('../middlewares/isNotLoggedIn')
+const isNotLoggedIn = require('./../middlewares/isNotLoggedIn') 
 
 //2 - Create 5 routes: 2 for login, 2 for signup and 1 for logout
 router.get('/signup', isNotLoggedIn, (req, res) => {
-	res.render('/signup');
+	res.render('auth/signup');
 });
 
 router.post('/signup', isNotLoggedIn, (req, res) => {
@@ -29,7 +29,7 @@ router.post('/signup', isNotLoggedIn, (req, res) => {
 		email === '' ||
 		!email.includes('@')
 	) {
-		res.render('/signup', { errorMessage: 'Something went wrong, try again.' });
+		res.render('auth/signup', { errorMessage: 'Something went wrong, try again.' });
 	}
 
 	//Check if user already exists
@@ -38,7 +38,7 @@ router.post('/signup', isNotLoggedIn, (req, res) => {
 			
 			//If user exists, send error
 			if (user) {
-				res.render('/signup', { errorMessage: 'This user already exists. Please create a new one.' });
+				res.render('auth/signup', { errorMessage: 'This user already exists. Please create a new one.' });
 				return;
 			
 			} else {
@@ -62,30 +62,28 @@ router.post('/signup', isNotLoggedIn, (req, res) => {
 });
 
 router.get('/login', isNotLoggedIn, (req, res) => {
-	res.render('/login');
+	res.render('auth/login');
 });
 
 router.post('/login', isNotLoggedIn, (req, res) => {
 	//GET VALUES FROM FORM
-	const { username, email, password } = req.body;
+	const {email, password } = req.body;
 
 	//VALIDATE INPUT
 	if (
-		!username ||
-		username === '' ||
 		!password ||
 		password === '' ||
 		!email ||
 		email === '' ||
 		!email.includes('@')
 	) {
-		res.render('/signup', { errorMessage: 'Something went wrong, try again.' });
+		res.render('auth/signup', { errorMessage: 'Something went wrong, try again.' });
 	}
 
 	User.findOne({ username })
 		.then((user) => {
 			if (!user) {
-				res.render('/login', { errorMessage: 'Input invalid. Please try again.' });
+				res.render('auth/login', { errorMessage: 'Input invalid. Please try again.' });
 			} else {
 				
 				const encryptedPassword = user.password;
@@ -93,9 +91,9 @@ router.post('/login', isNotLoggedIn, (req, res) => {
 
 				if (passwordCorrect) {
 					req.session.currentUser = user;
-					res.redirect(`/home/${userId}`);
+					res.redirect(`/home/${user._id}`);
 				} else {
-					res.render('/login', { errorMessage: 'Input invalid. Please try again.' });
+					res.render('auth/login', { errorMessage: 'Input invalid. Please try again.' });
 				}
 			}
 		})
@@ -105,7 +103,7 @@ router.post('/login', isNotLoggedIn, (req, res) => {
 router.get('/logout', (req, res) => {
 	req.session.destroy((err) => {
 		if (err) {
-			res.render('/error', { message: 'Something went wrong!' });
+			res.render('error', { message: 'Something went wrong!' });
 		} else {
 			res.redirect('/');
 		}

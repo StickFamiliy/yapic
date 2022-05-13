@@ -3,6 +3,8 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
+      "seedUsers": "node ./seeds/users.seed.js", 
+      "seedPosts": "node ./seeds/posts.seed.js", 
       "start": "node server.js",
       "dev": "nodemon server.js"
     },
