@@ -7,7 +7,7 @@ const fileUploader = require('../config/cloudinary')
 router.get('/profile/:userid', (req, res) => {
 	res.render('profile', { user: req.session.currentUser });
 });
-
+/*
 router.get('/post/new', (req, res) => {
 	res.render('home');
 });
@@ -40,5 +40,5 @@ router.post('/post/new', fileUploader.single('postPhotoUrl'), (req, res) => {
 			console.log(error);
 		});
 });
-
+*/
 module.exports = router;
