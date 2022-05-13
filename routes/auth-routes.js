@@ -5,7 +5,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const saltRounds = process.env.SALT || 10;
 
-const User = require('./../models/User.model');
+const User = require('../models/User.model'); 
 
 const isNotLoggedIn = require('../middlewares/isNotLoggedIn')
 

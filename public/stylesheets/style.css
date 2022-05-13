@@ -23,3 +23,7 @@ footer {
   height: 100px; /* Height of the footer */
   background: #ffff99;
 }
+
+#yapic-logo {
+  height: 20px;
+}
