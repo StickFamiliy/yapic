@@ -9,9 +9,10 @@ const postSchema = new Schema({
   title: { type: String },
   description: { type: String, required: true, maxlength: 300 },
   tags: [{ type: String }],
-  date: {type: Date}
+  date: { type: Date },
+  owner: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
 const Post = model("Post", postSchema);
 
-module.exports = Post;
+module.exports = Post; 
