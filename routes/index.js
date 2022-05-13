@@ -6,12 +6,29 @@ const Post = require('../models/Post.model');
 
 const fileUploader = require('./../config/cloudinary')
 
-/* GET home page */
+/* GET index page */
 router.get('/', (req, res, next) => {
 	res.render('index');
 });
 
-/* POST NEW PHOTO */
+/* GET home page */
+router
+	.route('/home/:userId')
+ 	.get((req, res, next) => {Post.find()
+		.populate('owner')
+		.then((posts) => {
+			res.render('home', { posts });
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+	})
+
+
+
+
+
+/* POST new photo */
 router
 	.route("/post/new")
 	.get((req, res, next) => res.render("post-creation"))

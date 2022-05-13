@@ -2,11 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 const Post = require('../models/Post.model');
-const fileUploader = require('../config/cloudinary')
+const fileUploader = require('../config/cloudinary');
 
-router.get('/profile/:userid', (req, res) => {
-	res.render('profile', { user: req.session.currentUser });
+
+router.get("/profile/:id", (req, res) => {
+	res.render('/private/profile', { user: req.session.currentUser }); 
 });
+
+
 /*
 router.get('/post/new', (req, res) => {
 	res.render('home');

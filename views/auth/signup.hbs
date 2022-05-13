@@ -21,13 +21,15 @@
   <br /><br />
 
   <label>Password:</label>
-  <input type="password" name="password" required placeholder="********"/>
+  <input type="password" name="password" required placeholder="********" />
 
   <br /><br />
 
-  <button type="submit">Register</button> | <span>Already a member? <a href="/login">Sign in</a></span>
+  <button type="submit">Register</button>
+  |
+  <span>Already a member? <a href="/login">Sign in</a></span>
 </form>
-
+<br /><br />
 {{#if errorMessage}}
-  <p>{{errorMessage}}</p>
+  <p style="color:#FF0000"><b>{{errorMessage}}</b></p>
 {{/if}}

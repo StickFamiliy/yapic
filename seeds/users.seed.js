@@ -5,7 +5,7 @@ const User = require("../models/User.model");
 const users = [
   {
     username: "pdellacassa",
-    password: "123456",
+    password: "$2b$10$/QkTIByd/EusAVkh42LaWu25QZoOSyovZ.piNoASJu4KGQ6t3vlRm",
     email: "pdellacassa@gmail.com",
     age: 34,
     genre: "Male",
@@ -16,7 +16,7 @@ const users = [
   },
   {
     username: "avieites",
-    password: "123456",
+    password: "$2b$10$/QkTIByd/EusAVkh42LaWu25QZoOSyovZ.piNoASJu4KGQ6t3vlRm",
     email: "albertevieites@gmail.com",
     age: 40,
     genre: "Male",
@@ -27,7 +27,7 @@ const users = [
   },
   {
     username: "mrstick",
-    password: "123456",
+    password: "$2b$10$/QkTIByd/EusAVkh42LaWu25QZoOSyovZ.piNoASJu4KGQ6t3vlRm",
     email: "mrstick@gmail.com",
     age: 100,
     genre: "Non-binary",
