@@ -19,11 +19,11 @@ const app = express();
 require('./config')(app);
 
 // default value for title local
-const projectName = 'yapic';
+const projectName = 'YaPIC';
 const capitalized = (string) =>
 	string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)} created with Ironlauncher`;
+app.locals.title = `${capitalized(projectName)} - Post Photos and Meet People`;
 
 // 👇 Start handling routes here
 const isLoggedIn = require('./middlewares/isLoggedIn'); 
