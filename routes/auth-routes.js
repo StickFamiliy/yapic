@@ -105,7 +105,7 @@ router.post('/login', isNotLoggedIn, (req, res) => {
 router.get('/logout', (req, res) => {
 	req.session.destroy((err) => {
 		if (err) {
-			res.render('error', { message: 'Something went wrong!' });
+			res.render('/error', { message: 'Something went wrong!' });
 		} else {
 			res.redirect('/');
 		}

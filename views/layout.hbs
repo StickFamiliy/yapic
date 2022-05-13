@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>{{title}}</title>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+   </head>
+
+   <body>
+
+      <nav>
+         <span>YaPIC</span>
+         <img id="yapic-logo" src="images/yapic-icon.png" alt="yapic-logo">
+         <a href="/login">Login</a>
+         <a href="/signup">Signup</a>
+         <a href="/post/new">Create post</a>
+         <a href="/profile/{{_userId}}">Profile</a>
+      </nav>
+      
+      <main>
+      {{{body}}}
+      </main>
+
+      <footer>
+         Footer
+      </footer>
+
+      <script src="/js/script.js"></script>
+   </body>
+
+</html>
