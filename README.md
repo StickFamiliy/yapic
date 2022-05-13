@@ -28,7 +28,7 @@
 |--------------|-------------------|------------------------|-----------------------------------|---------------------|
 |`GET`         |   `index` or `home`            |      `/`               | Main page route for `ìndex` or `home` view. If logged redirect to `/home/user/:userid`  |   {req.session.userID} |
 |`GET`         | `signup`            |    `/signup`           | Render `signup`form view          |                     |
-|`POST`        |  `home`           |    `/signup`           | Send signup data to server and creates an user in DB. Then redirect to `home`                                   |          {username, email, password}           |
+|`POST`        |  `home`           |    `/signup`           | Send signup data to server and creates an user in DB. Then redirect to `/home/:userId`                                   |          {username, email, password}           |
 |`GET`         |  `login`           |      `/login`          | Render `login`form view           |                     |
 |`POST`        |   `home`          |      `/login`          | Send login data to server and redirect to `home`     | {email, password}            |
 |`GET`         |   `home`          |      `/home/:userId`           | Render `home`view with personalization and potential profile matches                | {req.session.userID}    |
