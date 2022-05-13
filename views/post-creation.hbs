@@ -1,7 +1,7 @@
 <h1>Create a new post</h1>
 
 
-<form action="/private/rooms/add" method='POST' enctype="multipart/form-data">
+<form action="/post/new" method='POST' enctype="multipart/form-data">
 
   <label>Name:</label>
   <input type="text" name="name" required />
@@ -10,7 +10,7 @@
   <textarea type="text" name="description" required></textarea>
 
   <label>Image:</label>
-  <input type="file" name="imageUrl"/>
+  <input type="file" name="postPhotoUrl"/>
 
   <button type="submit">Create</button>
 

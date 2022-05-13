@@ -33,9 +33,11 @@
 |`POST`        |   `home`          |      `/login`          | Send login data to server and redirect to `home`     | {email, password}            |
 |`GET`         |   `home`          |      `/home/:userId`           | Render `home`view with personalization and potential profile matches                | {req.session.userID}    |
 |`GET`        |    `home`         |      `/post/new`     | Render `post-creation`view  |  |
-|`POST`        |    `post-creation`         |      `/post/new`     | Sends ObjID of the post that user do (upload photo with all fields). Then redirect `/home/user/:userId`   | {req.session.userID, req.params.postID, req.file.path} |
+|`POST`        |    `post-creation`         |      `/post/new`     | Sends ObjID of the post that user do (upload photo with all fields). Then redirect `/home/user/:userId`   | {req.session.userID, req.file.path} |
 |`GET`        |     `match-profile`          |      `/match/:matchId`    | Render `match`view   | {req.session.matchID} |
 |`POST`        |     `match-profile`          |      `/match/:matchId`    | Render modal for contact match   |  |
 |`GET`         |     `profile`        |      `/profile/:userId`        | Render `profile`view             | {req.session.userID                    |
 |`POST`        |    `profile`         |      `/profile/edit/user:id` | Send the data updated by the user to the DB. Then render `profile`view  | {req.session.userID, name, age, genre, interests, country, req.file.path}  |
 |`GET`        |    `home`         |      `/profile/:userId` | Render `home`view  |   |
+
+
