@@ -1,17 +1,31 @@
-<h1>Sign up form</h1>
+<br />
 
-<form action="/auth/signup" method='POST'>
+<h1>Sign up to YaPIC</h1>
+
+<br />
+
+<h4>Share your photos and start meeting people! </h4>
+
+<form action="/signup" method="POST">
+
+  <br /><br />
 
   <label>Username:</label>
-  <input type="text" name="username" required/>
+  <input type="text" name="username" required />
+
+  <br /><br />
 
   <label>Email: </label>
-  <input type="email" name="email" required />
+  <input type="email" name="email" required placeholder="name@mail.com" />
+
+  <br /><br />
 
   <label>Password:</label>
-  <input type="password" name="password" required />
+  <input type="password" name="password" required placeholder="********"/>
 
-  <button type="submit">Sign up</button>
+  <br /><br />
+
+  <button type="submit">Register</button> | <span>Already a member? <a href="/login">Sign in</a></span>
 </form>
 
 {{#if errorMessage}}

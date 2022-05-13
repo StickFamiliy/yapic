@@ -28,11 +28,11 @@ app.locals.title = `${capitalized(projectName)} - Post Photos and Meet People`;
 // 👇 Start handling routes here
 const isLoggedIn = require('./middlewares/isLoggedIn'); 
 
-const authRoutes = require('./routes/auth-routes');
-app.use('/auth', authRoutes);
+const authRoutes = require('./routes/auth-routes'); 
+app.use('/', authRoutes);
 
 const privateRoutes = require('./routes/private-routes');
-app.use('/private', isLoggedIn, privateRoutes);
+app.use('/', isLoggedIn, privateRoutes);
 
 const index = require('./routes/index');
 app.use('/', index);
