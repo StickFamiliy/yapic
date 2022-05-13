@@ -14,7 +14,7 @@ const posts = [
     postPhotoUrl: "",
     title: "Sagrada Familia",
     description: "Minor basilica in the Eixample district of Barcelona",
-    tags: ["Architecture"],
+    tags: ["Architecture", "Urban exploration"],
     date: "",
   },
   {

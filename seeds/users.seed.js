@@ -10,7 +10,7 @@ const users = [
     age: 34,
     genre: "Male",
     country: "Uruguay",
-    interest: ["Football", "Hiking", "Rugby"],
+    interests: ["Football", "Hiking", "Rugby"],
     userPhotoUrl:
       "https://simulacionymedicina.es/wp-content/uploads/2015/11/default-avatar-300x300-1.jpg",
   },
@@ -21,7 +21,7 @@ const users = [
     age: 40,
     genre: "Male",
     country: "Spain",
-    interest: ["Photography", "Football", "Web surfing", "Architecture"],
+    interests: ["Photography", "Football", "Web surfing", "Architecture"],
     userPhotoUrl:
       "https://simulacionymedicina.es/wp-content/uploads/2015/11/default-avatar-300x300-1.jpg",
   },
@@ -31,8 +31,8 @@ const users = [
     email: "mrstick@gmail.com",
     age: 100,
     genre: "Non-binary",
-    country: "Antigua &amp; Barbuda",
-    interest: ["Hiking", "Pottery", "Web surfing", "Architecture"],
+    country: "Antigua & Barbuda",
+    interests: ["Hiking", "Pottery", "Web surfing", "Architecture"],
     userPhotoUrl: "https://i.ibb.co/6b2xDd5/main.jpg",
   },
 ];
