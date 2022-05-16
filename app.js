@@ -26,6 +26,7 @@ const capitalized = (string) =>
 
 app.locals.title = `${capitalized(projectName)} - Post Photos and Meet People`;
 
+
 // 👇 Start handling routes here
 const isLoggedIn = require('./middlewares/isLoggedIn'); 
 

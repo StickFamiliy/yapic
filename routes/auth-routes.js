@@ -68,7 +68,8 @@ router.post('/login', isNotLoggedIn, (req, res) => {
 			if (!user) {
 				res.render('auth/login', { errorMessage: 'Input invalid. Please try again.' });
 			} else {
-				
+				req.app.locals.user = user;
+				console.log(req.app.locals);
 				const encryptedPassword = user.password;
 				const passwordCorrect = bcrypt.compareSync(password, encryptedPassword);
 				console.log("pass  " + passwordCorrect)
@@ -88,6 +89,7 @@ router.get('/logout', (req, res) => {
 		if (err) {
 			res.render('error', { message: 'Something went wrong!' });
 		} else {
+			req.app.locals.user = undefined;
 			res.redirect('/');
 		}
 	});

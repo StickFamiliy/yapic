@@ -1,14 +1,11 @@
-<h1>{{user.username}} Homepage</h1>
-<form action="/home/:userId" method="POST" enctype="multipart/form-data">
+<h1>{{username}} Homepage</h1>
 
-  <h4>Your current post</h4>
-  <img id="post-img" src="{{post.postPhotoUrl}}" alt="Post-img" />
-  <br />
-  <br />
-  <input type="file" name="imageUrl" />
+  {{#each posts}}
 
-  <br /><br />
+    <h4>{{title}}</h4>
 
-  <h4>Owner: {{post.owner}}</h4>
+    <p>Description: {{description}}</p>
 
-</form>
+    <img class="post-img {{_id}}" src="{{postPhotoUrl}}" alt="{{title}}" />
+
+  {{/each}}

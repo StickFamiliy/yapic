@@ -212,7 +212,9 @@ const userSchema = new Schema({
     type: String,
     default:
       "https://simulacionymedicina.es/wp-content/uploads/2015/11/default-avatar-300x300-1.jpg",
-  }
+  }, 
+
+  posts: [{type: Schema.Types.ObjectId, ref: 'Post'}] 
 });
 
 const User = model("User", userSchema);
