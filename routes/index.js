@@ -189,7 +189,7 @@ router.get(
   fileUploader.single("postPhotoUrl"),
   (req, res) => {
     var myTags = [];
-    var theirInterests = [];
+    
     User.findById(req.params.userId)
       .populate("posts")
       .then((user) => {
@@ -200,6 +200,7 @@ router.get(
             }
           }
         }
+      
         res.render("home", { user: user, myTags: myTags });
       });
   }
