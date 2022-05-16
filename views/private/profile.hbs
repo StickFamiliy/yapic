@@ -1,7 +1,78 @@
-<h1>This is your private profile page, {{user.username}}</h1>
+<br />
+
+<h1>Hi, {{user.username}}!</h1>
 
 <br /><br />
 
 <div>
-<a href="/logout">Logout</a>
+
+  <form action="/profile" method="POST" enctype="multipart/form-data">
+
+    <h4>Photo</h4>
+    <img id="profile-img" src="{{user.userPhotoUrl}}" alt="User-img" />
+    <br />
+    <br />
+    <input type="file" name="imageUrl" />
+
+    <br /><br />
+
+    <label for="email">
+      <h4>Email</h4>
+      <input type="text" name="email" value="{{user.email}}" />
+    </label>
+
+    <br /><br />
+
+    <label for="password">
+      <h4><label>Password</label></h4>
+      <input type="text" name="password" placeholder="************" />
+    </label>
+
+    <br /><br />
+
+    <label for="usernamme">
+      <h4>Username</h4>
+      <input type="text" name="username" value="{{user.username}}" />
+    </label>
+
+    <br /><br />
+
+    <label for="age">
+      <h4>Age</h4>
+      <input type="text" name="age" value="{{user.age}}" />
+    </label>
+
+    <br /><br />
+
+    <label for="genre">
+      <h4>Genre</h4>
+      <input type="text" name="genre" value="{{user.genre}}" />
+    </label>
+
+    <br /><br />
+
+    <label for="country">
+      <h4>Country</h4>
+      <input type="text" name="country" value="{{user.country}}" />
+    </label>
+
+    <br /><br />
+
+    <label for="interests">
+      <h4>Interests</h4>
+      <select name="interests" id="interests" multiple>
+      {{#each user.interests}}
+      <option value="this">{{this}}</option>
+      {{/each}}
+      </select>
+    </label>
+
+    <br /><br />
+
+    <button type="submit">Update</button>
+
+    <br /><br />
+
+  </form>
+
 </div>

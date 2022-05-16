@@ -1,47 +1,55 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const Post = require('../models/Post.model');
-const fileUploader = require('../config/cloudinary');
+const User = require("../models/User.model.js");
+const fileUploader = require("../config/cloudinary");
 
+const isLoggedin = require("../middlewares/isLoggedIn");
 
-router.get("/profile/:id", (req, res) => {
-	res.render('/private/profile', { user: req.session.currentUser }); 
+router.get("/profile", isLoggedin, (req, res) => 
+  res.render("private/profile", { user: req.session.currentUser })
+);
+
+router.post("/profile", fileUploader.single("userPhotoUrl"), (req, res) => {
+  //Get the user id from the session
+  const userId = req.session.currentUser._id;
+
+  //Get the form data from the body
+  const { username, password, email, age, genre, country, interests } = req.body;
+
+  //Get the image url from uploading
+  let userPhotoUrl = undefined
+  if(req.file) userPhotoUrl = req.file.path 
+
+  console.log(
+    username,
+    password,
+    email,
+    age,
+    genre,
+    country,
+    interests,
+    userPhotoUrl
+  );
+
+  User.findByIdAndUpdate((userId), {
+    username,
+    password,
+    email,
+    age,
+    genre,
+    country,
+    interests,
+    userPhotoUrl,
+  })
+    .then((editUser) => {
+      console.log(editUser);
+      res.redirect(`/home/${userId._id}`);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });
 
-
-/*
-router.get('/post/new', (req, res) => {
-	res.render('home');
-});
-
-router.post('/post/new', fileUploader.single('postPhotoUrl'), (req, res) => {
-	//Get the user id from the session
-	const userId = req.session.currentUser._id;
-
-	//Get the form data from the body
-	const { title, description, tags, date } = req.body;
-
-	//Get the image url from uploading
-	const imageUrl = req.file.path
-
-	console.log(title, description, imageUrl, tags, date);
-
-	Room.create({
-		title,
-		description,
-		tags,
-		date,
-		imageUrl,
-		owner: userId
-	})
-		.then((createdPost) => {
-			console.log(createdPost);
-			res.redirect('/post/new');
-		})
-		.catch((error) => {
-			console.log(error);
-		});
-});
-*/
 module.exports = router;
+

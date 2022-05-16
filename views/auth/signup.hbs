@@ -6,30 +6,41 @@
 
 <h4>Share your photos and start meeting people! </h4>
 
+  <br /><br />
+
 <form action="/signup" method="POST">
+  
+  <div class="form-group" >
+    <label for="username">Username: </label>
+    <input type="text" class="form-control" name="username" id="username" required />
+  </div>
+  
+  <br />
 
-  <br /><br />
+  <div class="form-group" >
+    <label for="email">Email: </label>
+    <input type="email" class="form-control" name="email" id="email" required placeholder="name@mail.com" />
+  </div>
+  
+  <br />
+  
+  <div class="form-group" >
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" name="password" id="password" required placeholder="********" />
+  </div>
 
-  <label>Username:</label>
-  <input type="text" name="username" required />
+    <br />
 
-  <br /><br />
-
-  <label>Email: </label>
-  <input type="email" name="email" required placeholder="name@mail.com" />
-
-  <br /><br />
-
-  <label>Password:</label>
-  <input type="password" name="password" required placeholder="********" />
-
-  <br /><br />
-
-  <button type="submit">Register</button>
-  |
-  <span>Already a member? <a href="/login">Sign in</a></span>
+    <button class="btn btn-primary" type="submit">Register</button>
+  
 </form>
+
+ <br /><br />
+
+<span>Already a member? <a href="/signup">Login</a></span>
+
 <br /><br />
+
 {{#if errorMessage}}
-  <p style="color:#FF0000"><b>{{errorMessage}}</b></p>
+  <p class="alert alert-danger"><b>{{errorMessage}}</b></p>
 {{/if}}

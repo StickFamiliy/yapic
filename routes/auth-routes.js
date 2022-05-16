@@ -1,4 +1,4 @@
-//1 import packages and User model
+// Import packages and User model
 const express = require('express');
 const router = express.Router();
 
@@ -14,15 +14,15 @@ router.get('/signup', isNotLoggedIn, (req, res) => {
 });
 
 router.post('/signup', isNotLoggedIn, (req, res) => {
-	//GET VALUES FROM FORM
+	// Get values form form
 	const { username, email, password } = req.body;
 
-	//VALIDATE INPUT
+	// Validate imput
 	if (!username || !password || !email) {
 		res.render('auth/signup', { errorMessage: 'Something went wrong, try again.' });
 	}
 
-	//Check if user already exists
+	// heck if user already exists
 	User.findOne({ email })
 		.then((user) => {
 			
@@ -33,14 +33,14 @@ router.post('/signup', isNotLoggedIn, (req, res) => {
 			
 			} else {
 			
-				//Hash the password
+				// Hash the password
 				const salt = bcrypt.genSaltSync(saltRounds);
 				const hash = bcrypt.hashSync(password, salt);
-				//If user does not exist, create it
+				// If user does not exist, create it
 				User.create({ username, email, password: hash })
 					.then((newUser) => {
 						console.log(newUser);
-						//Once created, redirect
+						// Once created, redirect
 						res.redirect(`/home/${newUser._id}`);
 					})
 					.catch((err) => console.log(err));
@@ -49,16 +49,16 @@ router.post('/signup', isNotLoggedIn, (req, res) => {
 		.catch((err) => console.log(err));
 });
 
-router.get('/login', isNotLoggedIn, (req, res) => {
+router.get('/login', isNotLoggedIn, (req, res, next) => {
 	res.render('auth/login');
 });
 
 router.post('/login', isNotLoggedIn, (req, res) => {
 	
-	//GET VALUES FROM FORM
+	// Get values form form
 	const {email, password } = req.body;
 
-	//VALIDATE INPUT
+	// Validate input
 	if (!email || !password) {
 		res.render('auth/login', { errorMessage: 'Invalid credentials.' });
 	}

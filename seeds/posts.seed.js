@@ -4,32 +4,32 @@ const Post = require("../models/Post.model");
 
 const posts = [
   {
-    postPhotoUrl: "",
+    postPhotoUrl: undefined,
     title: "Camp Nou",
     description: "Home of FC Barcelona",
     tags: ["Football"],
-    date: "",
+    date: undefined,
   },
   {
-    postPhotoUrl: "",
+    postPhotoUrl: undefined,
     title: "Sagrada Familia",
     description: "Minor basilica in the Eixample district of Barcelona",
     tags: ["Architecture", "Urban exploration"],
-    date: "",
+    date: undefined,
   },
   {
-    postPhotoUrl: "https://easterntradelinks.com/front/images/default.png",
+    postPhotoUrl: undefined,
     title: "Tibidabo",
     description: "Sagrat Cor church in Tibidabo's hill",
     tags: ["Architecture"],
-    date: "",
+    date: undefined,
   },
 ];
 
 Post.deleteMany().then(() => {
   Post.create(posts)
-    .then((postssFromDb) => {
-      console.log("Created", postssFromDb.length, "posts");
+    .then((postsFromDb) => {
+      console.log("Created", postsFromDb.length, "posts");
       mongoose.connection.close();
     })
     .catch((err) =>

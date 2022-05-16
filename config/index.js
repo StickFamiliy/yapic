@@ -40,8 +40,11 @@ module.exports = (app) => {
 
   // Handles access to the favicon
   app.use(
-    favicon(path.join(__dirname, "..", "public", "images", "yapic-logo.ico")) 
+    favicon(path.join(__dirname, "..", "public", "images", "yapic-logo.ico"))
   );
+
+  app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+  app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
 
   app.use(
     session({

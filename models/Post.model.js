@@ -181,9 +181,14 @@ const postSchema = new Schema({
       "Water sports",
     ],
   },
-  date: { type: Date },
+  date: {
+    type: Date,
+    default: () => Date.now()
+  },
 });
 
 const Post = model("Post", postSchema);
 
-module.exports = Post; 
+module.exports = Post;
+
+

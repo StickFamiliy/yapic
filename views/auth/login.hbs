@@ -4,28 +4,35 @@
 
 <br />
 
-<h4>Welcome back you've been missed!</h4>
+<h4>You've been missed!</h4>
 
 <br /><br />
 
 <form action="/login" method="POST">
+  <div class="form-group" >
+    <label for="email">Email: </label>
+    <input type="email" class="form-control" name="email" id="email" required placeholder="name@mail.com" />
+  </div>
+  
+  <br />
+  
+  <div class="form-group" >
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" name="password" id="password" required placeholder="********" />
+  </div>
 
-  <label>Email: </label>
-  <input type="email" name="email" required placeholder="name@mail.com" />
+    <br />
 
-  <br /><br />
-
-  <label>Password:</label>
-  <input type="password" name="password" required placeholder="********" />
-
-  <br /><br />
-
-  <button type="submit">Sign in</button>
-  |
-  <span>Don't have an account? <a href="/signup">Register</a></span>
+    <button class="btn btn-primary" type="submit">Login</button>
+  
 </form>
+
+ <br /><br />
+
+<span>Don't have an account? <a href="/signup">Register</a></span>
+
 
 <br /><br />
 {{#if errorMessage}}
-  <p style="color:#FF0000"><b>{{errorMessage}}</b></p>
+  <p class="alert alert-danger"><b>{{errorMessage}}</b></p>
 {{/if}}
