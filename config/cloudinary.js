@@ -13,7 +13,7 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     allowed_formats: ['svg', 'png', 'jpg'],
-    folder: 'cloudinary-test'
+    folder: 'yapic'
   }
 })
 

@@ -1,17 +1,39 @@
 <h1>Create a new post</h1>
 
 
-<form action="/post/new" method='POST' enctype="multipart/form-data">
 
-  <label>Name:</label>
-  <input type="text" name="name" required />
 
-  <label>Description: </label>
-  <textarea type="text" name="description" required></textarea>
 
-  <label>Image:</label>
-  <input type="file" name="postPhotoUrl"/>
+
+
+
+
+<div class="post-container">
+<form action="/post/new" method="POST" enctype="multipart/form-data">
+    <label><strong>Title:</strong></label>
+    <input type="text" name="title" required />
+
+  
+
+    <label for="inputEmail" class="sr-only">Email address</label>
+
+    <label><strong>Description:</strong></label>
+    <textarea type="text" name="description" required></textarea>
+  
+    <label><strong>Image:</strong></label>
+    <input type="file" name="postPhotoUrl" />
+  
+    <label for="interests">
+      <strong>Tags:</strong>
+      <select name="interests" id="interests" multiple>
+        {{#each enumOptions}}
+          <option value="this">{{this}}</option>
+        {{/each}}
+      </select>
+    </label>
+  
 
   <button type="submit">Create</button>
 
 </form>
+</div>
