@@ -3,6 +3,11 @@
 }
 
 body {
+  min-height: 100vh;
+  margin: 0;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -17,13 +22,20 @@ nav {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px; /* Height of the footer */
-  background: #ffff99;
+  min-height: 50px;
+  background: PapayaWhip;
 }
 
 #yapic-logo {
   height: 20px;
+}
+
+#avatar {
+  border-radius: 100%;
+  height: 30px;
+}
+
+#profile-img {
+  border-radius: 100%;
+  width: 200px;
 }

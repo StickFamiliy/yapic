@@ -1,10 +1,14 @@
-<div>
-  <section>
-    {{#each post}}
-    <h5>Description:</h5> <p>{{post.description}}</p>
-     <p>{{post.tags}}</p>
-    <img class="post-img" src="{{post.imageUrl}}" alt="{{post.title}}" />
-    {{/each}}
-  </section>
-</div>
+<h1>{{user.username}} Homepage</h1>
+<form action="/home/:userId" method="POST" enctype="multipart/form-data">
 
+  <h4>Your current post</h4>
+  <img id="post-img" src="{{post.postPhotoUrl}}" alt="Post-img" />
+  <br />
+  <br />
+  <input type="file" name="imageUrl" />
+
+  <br /><br />
+
+  <h4>Owner: {{post.owner}}</h4>
+
+</form>
