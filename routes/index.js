@@ -8,7 +8,7 @@ const fileUploader = require("./../config/cloudinary");
 
 const isLoggedin = require("../middlewares/isLoggedIn");
 
-const enumOptions =[
+const enumOptions = [
   "3D printing",
   "Amateur radio",
   "Scrapbook",
@@ -176,32 +176,46 @@ const enumOptions =[
   "Vacation",
   "Vehicle restoration",
   "Water sports",
-]
+];
 
 /* GET index page */
 router.get("/", (req, res) => {
   res.render("index");
 });
 
-router.get("/home/:userId", isLoggedin, fileUploader.single("postPhotoUrl"),(req, res) => {
-	User.findById(req.params.userId)
-  .populate('posts')
-	.then((user) => {
-		res.render("home", user)
-	}) 
-
-});
+router.get(
+  "/home/:userId",
+  isLoggedin,
+  fileUploader.single("postPhotoUrl"),
+  (req, res) => {
+    var myTags = [];
+    var theirInterests = [];
+    User.findById(req.params.userId)
+      .populate("posts")
+      .then((user) => {
+        for (var post of user.posts) {
+          for (var tag of post.tags) {
+            if (!myTags.includes(tag)) {
+              myTags.push(tag);
+            }
+          }
+        }
+        res.render("home", { user: user, myTags: myTags });
+      });
+  }
+);
 
 /* POST new post */
 router
   .route("/post/new")
-  .get((req, res, next) => res.render("post-creation", {enumOptions}))
+  .get((req, res, next) => res.render("post-creation", { enumOptions }))
   .post(fileUploader.single("postPhotoUrl"), (req, res) => {
     // Get the user id from the session
     const currentUser = req.session.currentUser;
 
     // Get the form data from the body
     const { title, description, tags, date } = req.body;
+    console.log(req.body);
 
     // Get the image url from uploading
     const postPhotoUrl = req.file.path;
@@ -218,8 +232,9 @@ router
     })
       .then((createdPost) => {
         console.log("Created by ", createdPost);
-        User.findByIdAndUpdate(currentUser._id, { $push : {posts : createdPost}})
-        .then(()=> res.redirect(`/home/${currentUser._id}`))
+        User.findByIdAndUpdate(currentUser._id, {
+          $push: { posts: createdPost },
+        }).then(() => res.redirect(`/home/${currentUser._id}`));
       })
       .catch((error) => {
         console.log(error);
