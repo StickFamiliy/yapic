@@ -1,11 +1,13 @@
-<h1>{{username}} Homepage</h1>
+<h1>{{user.username}} Homepage</h1>
 
-  {{#each posts}}
+  {{#each user.posts}}
 
     <h4>{{title}}</h4>
+    <h4>{{user.email}}</h4>
 
     <p>Description: {{description}}</p>
 
     <img class="post-img {{_id}}" src="{{postPhotoUrl}}" alt="{{title}}" />
 
   {{/each}}
+
