@@ -1,6 +1,6 @@
 <img src="https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png" width="200"/> &nbsp; <img src="https://i.ibb.co/txcgFGM/yapic.png" width="200"/>
 
-# YaPIC: Photos photos, meet people
+# YaPIC: Posts photos, meet people
 
 ## Description
 
@@ -37,5 +37,28 @@
 |`GET`         |     `profile`        |      `/profile/:userId`        | Render `profile`view             | {req.session.userID                    |
 |`POST`        |    `profile`         |      `/profile/:user:id` | Send the data updated by the user to the DB. Then render `profile`view  | {req.session.userID, name, age, genre, interests, country, req.file.path}  |
 |`GET`        |    `home`         |      `/profile/:userId` | Render `home`view  |   |
+
+
+
+## Links
+
+### Trello
+
+[Trello link](https://trello.com/b/2F0nTrm1/poketrade](https://trello.com/b/Yj5pkX4s/project-2-dellacassa-veites)
+
+### Git
+
+
+[Repository Link](https://github.com/evapanizo/poketrade](https://github.com/StickFamiliy/yapic)
+
+[Deploy Link](https://poketradeih.herokuapp.com/)
+
+### Slides
+
+
+[Slides Link](https://slides.com/evapanizo/poke-trade)
+
+
+
 
 
