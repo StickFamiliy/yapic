@@ -2,37 +2,16 @@ const mongoose = require("mongoose");
 const User = require("../models/User.model");
 require("../db/index");
 
-
 const users = [
   {
-    username: "pdellacassa",
-    password: "$2b$10$/QkTIByd/EusAVkh42LaWu25QZoOSyovZ.piNoASJu4KGQ6t3vlRm",
-    email: "pdellacassa@gmail.com",
-    age: 34,
+    username: "brazilianAleix",
+    password: "",
+    email: "baleix@yapic.com",
+    age: 23,
     genre: "Male",
-    country: "Uruguay",
-    interests: ["Football", "Hiking", "Rugby"],
-    userPhotoUrl: undefined
-  },
-  {
-    username: "avieites",
-    password: "$2b$10$/QkTIByd/EusAVkh42LaWu25QZoOSyovZ.piNoASJu4KGQ6t3vlRm",
-    email: "albertevieites@gmail.com",
-    age: 40,
-    genre: "Male",
-    country: "Spain",
-    interests: ["Photography", "Football", "Web surfing", "Architecture"],
-    userPhotoUrl: undefined
-  },
-  {
-    username: "mrstick",
-    password: "$2b$10$/QkTIByd/EusAVkh42LaWu25QZoOSyovZ.piNoASJu4KGQ6t3vlRm",
-    email: "mrstick@gmail.com",
-    age: 100,
-    genre: "Non-binary/non-conforming",
-    country: "Antigua & Barbuda",
-    interests: ["Hiking", "Pottery", "Web surfing", "Architecture"],
-    userPhotoUrl: undefined
+    country: "Brazil",
+    interests: ["Magic"],
+    userPhotoUrl: undefined,
   },
 ];
 

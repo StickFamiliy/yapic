@@ -13,6 +13,11 @@ const express = require('express');
 // https://www.npmjs.com/package/hbs
 const hbs = require('hbs');
 
+hbs.registerHelper("formatDate", (date)=>{
+	const dayName = ["Monday", "Tuesday", "Wednesday", "Thursdasy", "Friday", "Saturday", "Sunday"]
+	const monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+	return `${dayName[date.getDay()]} ${date.getDate()} ${monthName[date.getMonth()]} ${date.getFullYear()}`})
+
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware

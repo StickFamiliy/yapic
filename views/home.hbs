@@ -1,17 +1,27 @@
-<h1>{{user.username}} Homepage</h1>
-
+<h1>Your posts:</h1>
+<br>
   {{#each user.posts}}
 
-    <h4>{{title}}</h4>
-    <h4>{{user.email}}</h4>
+    <h4>Title: {{title}}</h4>
+    <h4>Date: {{formatDate date}}</h4>
 
-    <p>Description: {{description}}</p>
+     
+    <h4>Description: {{description}}<h4> 
+  
 
-    <img class="post-img {{_id}}" src="{{postPhotoUrl}}" alt="{{title}}" />
-
+    <img class="post-img" src="{{postPhotoUrl}}" alt="{{title}}" />
+    <p></p>
+    <p>Tags: {{tags}}</p> 
+    <hr class="hr-post">
   {{/each}}
 
+<h1>Your matches:</h1>
+
+<br>
+
 {{#each myMatches}}
-<p>you match with {{username}}</p>
-<img src="{{userPhotoUrl}}" alt="match-img">
+<a href="/match/{{this._id}}"><img src="{{userPhotoUrl}}" alt="match-img"></a>
+<h4>Name: {{username}}</h4>
+<h4>Age: {{age}}</h4>
+<h4>Country: {{country}}</h4>
 {{/each}}
