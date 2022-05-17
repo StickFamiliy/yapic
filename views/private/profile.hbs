@@ -8,7 +8,7 @@
 
   <form action="/profile/{{_id}}" method="POST" enctype="multipart/form-data">
 
-    <img id="profile-img" src="{{user.userPhotoUrl}}" alt="User-img" />
+    <img id="profile-img" src="{{user.userPhotoUrl}}" alt="profile-img" />
     <br />
     <br />
     <input type="file" name="userPhotoUrl" />
@@ -16,7 +16,7 @@
     <br />
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Email</label>
+      <label for="email">Email</label>
       <input
         type="email"
         class="form-control"
