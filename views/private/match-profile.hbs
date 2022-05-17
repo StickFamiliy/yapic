@@ -1,57 +1,55 @@
 <br />
 
-<h1>Hi, {{user.username}}!</h1>
+<h1>Hi, my name is{{user.username}}!</h1>
 
-<br />
+<br /><br />
 
 <div>
 
   <form action="/profile/{{_id}}" method="POST" enctype="multipart/form-data">
 
-    
+    <h4>Photo</h4>
     <img id="profile-img" src="{{user.userPhotoUrl}}" alt="User-img" />
     <br />
     <br />
     <input type="file" name="userPhotoUrl" />
 
+    <br /><br />
 
-    <br>
+    <label for="email">
+      <h4>Email</h4>
+      <input type="text" name="email" value="{{user.email}}" />
+    </label>
 
-    <div class="form-group">
-    <label for="exampleInputEmail1">Email</label>
-    <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" value="{{user.email}}">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-
-    <br>
+    <br /><br />
 
     <label for="usernamme">
       <h4>Username</h4>
       <input type="text" name="username" value="{{user.username}}" />
     </label>
 
-    <br>
+    <br /><br />
 
     <label for="age">
       <h4>Age</h4>
       <input type="text" name="age" value="{{user.age}}" />
     </label>
 
-    <br>
+    <br /><br />
 
     <label for="genre">
       <h4>Genre</h4>
       <input type="text" name="genre" value="{{user.genre}}" />
     </label>
 
-    <br>
+    <br /><br />
 
     <label for="country">
       <h4>Country</h4>
       <input type="text" name="country" value="{{user.country}}" />
     </label>
 
-    <br>
+    <br /><br />
 
     <label for="interests">
       <h4>Interests</h4>
@@ -71,17 +69,3 @@
   </form>
 
 </div>
-
- <br /><br />
- <br /><br />
-
-
-<form>
- 
- 
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>

@@ -7,6 +7,7 @@ const Post = require("../models/Post.model");
 const fileUploader = require("./../config/cloudinary");
 
 const isLoggedin = require("../middlewares/isLoggedIn");
+const { populate } = require("../models/User.model");
 
 const enumOptions = [
   "3D printing",
@@ -189,7 +190,8 @@ router.get(
   fileUploader.single("postPhotoUrl"),
   (req, res) => {
     var myTags = [];
-    var theirInterests = [];
+    var myMatches = [];
+
     User.findById(req.params.userId)
       .populate("posts")
       .then((user) => {
@@ -200,12 +202,32 @@ router.get(
             }
           }
         }
-        res.render("home", { user: user, myTags: myTags });
+        return user;
+      })
+      .then((user) => {
+        User.find({ _id: { $ne: req.session.currentUser._id } })
+          .then((usersMatch) => {
+            usersMatch.forEach((user) => {
+              myTags.forEach((tag) => {
+                if (user.interests.includes(tag) && !myMatches.includes(user)) {
+                  myMatches.push(user);
+                }
+              });
+            });
+            return user;
+          })
+          .then((user) =>
+            res.render("home", {
+              user: user,
+              myTags: myTags,
+              myMatches: myMatches,
+            })
+          );
       });
   }
 );
 
-/* POST new post */
+// POST new post
 router
   .route("/post/new")
   .get((req, res, next) => res.render("post-creation", { enumOptions }))
@@ -242,10 +264,8 @@ router
   });
 
 /* MATCH PROFILE */
-/* 	router
-		.route("/match/:matchId");
-		.get((req, res, next) => {
-			res.render("/match")
-		}) */
+router.route("/match/:matchId").get((req, res, next) => {
+  res.render("/match");
+});
 
 module.exports = router;
