@@ -184,6 +184,7 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
+/* GET home page */
 router.get(
   "/home/:userId",
   isLoggedin,
@@ -227,7 +228,7 @@ router.get(
   }
 );
 
-// POST new post
+/* GET and POST new post */
 router
   .route("/post/new")
   .get((req, res, next) => res.render("post-creation", { enumOptions }))
@@ -263,9 +264,14 @@ router
       });
   });
 
-/* MATCH PROFILE */
-router.route("/match/:matchId").get((req, res, next) => {
-  res.render("/match");
+/* GET match profile */
+router
+  .route('/match/:matchId')
+  .get((req, res, next) => {
+    const { matchId } = req.params;
+    User.findById(matchId)
+    .then((user) => res.render("private/match-profile", user))
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

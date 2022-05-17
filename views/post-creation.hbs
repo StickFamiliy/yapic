@@ -1,18 +1,20 @@
 <h1>Create a new post</h1>
-
+<br /><br />
 <div class="post-container">
-<form action="/post/new" method="POST" enctype="multipart/form-data">
+  <form action="/post/new" method="POST" enctype="multipart/form-data">
     <label><strong>Title:</strong></label>
     <input type="text" name="title" required />
-
+    <br /><br />
     <label for="inputEmail" class="sr-only">Email address</label>
 
     <label><strong>Description:</strong></label>
     <textarea type="text" name="description" required></textarea>
-  
+    <br /><br />
+
     <label><strong>Image:</strong></label>
     <input type="file" name="postPhotoUrl" />
-  
+    <br /><br />
+
     <label for="tags">
       <strong>Tags:</strong>
       <select name="tags" id="tags" multiple>
@@ -22,7 +24,7 @@
       </select>
     </label>
 
-  <button type="submit">Create</button>
+    <button type="submit">Create</button>
 
-</form>
+  </form>
 </div>
