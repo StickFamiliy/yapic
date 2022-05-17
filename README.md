@@ -35,7 +35,7 @@
 |`GET`        |     `match-profile`          |      `/match/:matchId`    | Render `match`view   | {req.session.matchID} |
 |`POST`        |     `match-profile`          |      `/match/:matchId`    | Render modal for contact match   |  |
 |`GET`         |     `profile`        |      `/profile/:userId`        | Render `profile`view             | {req.session.userID                    |
-|`POST`        |    `profile`         |      `/profile/edit/user:id` | Send the data updated by the user to the DB. Then render `profile`view  | {req.session.userID, name, age, genre, interests, country, req.file.path}  |
+|`POST`        |    `profile`         |      `/profile/:user:id` | Send the data updated by the user to the DB. Then render `profile`view  | {req.session.userID, name, age, genre, interests, country, req.file.path}  |
 |`GET`        |    `home`         |      `/profile/:userId` | Render `home`view  |   |
 
 
