@@ -17,19 +17,24 @@
   <body>
 
     <nav class="nav-bar">
-      <a href={{#if user}}"/home/{{user._id}}"{{else}}"/"{{/if}}><img id="yapic-logo" src="http://localhost:3000/images/yapic-icon.png" alt="yapic-logo" /></a>
-      {{#unless user}}<a href="/login">Login</a>{{/unless}}
-      {{#unless user}}<a href="/signup">Signup</a>{{/unless}}
-      {{#if user}}<a href="/post/new">Create post</a>{{/if}}
-      {{#if user}}<div class="dropdown">
+      {{#if user}}
+      <a href="/home/{{user._id}}"><img id="yapic-logo" src="http://localhost:3000/images/yapic-icon.png" alt="yapic-logo" /></a>
+      <a href="/home/{{user._id}}">
+      <a href="/post/new">Create post</a>
+      <div class="dropdown">
         <a href="#" id="imageDropdown" data-toggle="dropdown">
-          <img id="avatar" src="{{user.userPhotoUrl}}">
+        <img id="avatar" src="{{user.userPhotoUrl}}">
         </a>
         <ul class="dropdown-menu dd-style" role="menu" aria-labelledby="imageDropdown">
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/profile/{{user._id}}">Profile</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Logout</a></li>
         </ul>
-      </div>{{/if}}
+      </div>
+      {{else}}
+      <a href="/"><img id="yapic-logo" src="http://localhost:3000/images/yapic-icon.png" alt="yapic-logo" /></a>
+      <a href="/login">Login</a>
+      <a href="/signup">Signup</a>
+      {{/if}}
     </nav>
 
     <main class="main">
