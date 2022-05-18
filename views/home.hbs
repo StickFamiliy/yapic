@@ -1,17 +1,25 @@
-<h1>{{user.username}} Homepage</h1>
+<div class="title-cards">
+  <h1>{{user.username}}'s Home</h1>
+</div>
 
+<div class="post-cards">
   {{#each user.posts}}
-
-    <h4>{{title}}</h4>
-    <h4>{{user.email}}</h4>
-
-    <p>Description: {{description}}</p>
-
-    <img class="post-img {{_id}}" src="{{postPhotoUrl}}" alt="{{title}}" />
-
+    <div class="single-card">
+      <img class="post-img {{_id}}" src="{{postPhotoUrl}}" alt="{{title}}" />
+      <div class="text-card">
+        <h4>{{title}}</h4>
+        <h4>{{user.email}}</h4>
+        <p>{{description}}</p>
+      </div>
+    </div>
   {{/each}}
+</div>
 
-{{#each myMatches}}
-<p>you match with {{username}}</p>
-<img src="{{userPhotoUrl}}" alt="match-img">
-{{/each}}
+<div class="match-scroller">
+  {{#each myMatches}}
+    <div class="match-card">
+      <img src="{{userPhotoUrl}}" alt="match-img" />
+      <p>matched with {{username}}</p>
+    </div>
+  {{/each}}
+</div>
