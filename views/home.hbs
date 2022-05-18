@@ -11,7 +11,15 @@
 
     <img class="post-img" src="{{postPhotoUrl}}" alt="{{title}}" />
     <p></p>
-    <p>Tags: {{tags}}</p> 
+    <p>Tags: {{tags}}</p>
+    
+    <form action="/post/delete/{{_id}}" method="POST">
+    <button class="btn btn-delete" type="submit">
+    <span class="mdi mdi-delete mdi-24px"></span>
+    <span class="mdi mdi-delete-empty mdi-24px"></span>
+    <span>Delete post</span>  
+    </button>
+    </form>
     <hr class="hr-post">
   {{/each}}
 
