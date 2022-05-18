@@ -44,19 +44,18 @@
 
 ### Trello
 
-[Trello link](https://trello.com/b/2F0nTrm1/poketrade](https://trello.com/b/Yj5pkX4s/project-2-dellacassa-veites)
+[Trello link](https://trello.com/b/Yj5pkX4s/project-2-dellacassa-veites)
 
 ### Git
 
-
-[Repository Link](https://github.com/evapanizo/poketrade](https://github.com/StickFamiliy/yapic)
+[Repository Link](https://github.com/StickFamiliy/yapic)
 
 [Deploy Link](https://poketradeih.herokuapp.com/)
 
 ### Slides
 
 
-[Slides Link](https://slides.com/evapanizo/poke-trade)
+[Slides Link]([https://slides.com/evapanizo/poke-trade](https://slides.com/pablodellacassa/minimal/fullscreen))
 
 
 
