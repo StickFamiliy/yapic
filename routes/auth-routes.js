@@ -54,8 +54,7 @@ router.get('/login', isNotLoggedIn, (req, res, next) => {
 	res.render('auth/login');
 });
 
-router.post('/login', isLoggedIn, (req, res) => {
-	
+router.post('/login', isNotLoggedIn, (req, res) => {
 	// Get values form form
 	const {email, password } = req.body;
 
