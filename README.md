@@ -21,7 +21,6 @@
 
 ## Server Routes/Views:
 
-
 |**Method**    |    **View**           |    **Route**     |   **Description**       |          **Request - Body**                     |
 |--------------|-------------------|------------------------|-----------------------------------|---------------------|
 |`GET`         |   `index` or `home`            |      `/`               | Main page route for `ìndex` or `home` view. If logged redirect to `/home/user/:userid`  |   {req.session.userID} |
@@ -38,8 +37,34 @@
 |`POST`        |    `profile`         |      `/profile/:user:id` | Send the data updated by the user to the DB. Then render `profile`view  | {req.session.userID, name, age, genre, interests, country, req.file.path}  |
 |`GET`        |    `home`         |      `/profile/:userId` | Render `home`view  |   |
 
+### Backlog
+| Method | Route | Description |
+|--------|-------|-------------|
+| `GET` | `/inbox` | Render inbox messages|
 
+## Models
 
+### User
+```
+username: String
+password: String
+email: String
+age: String
+genre: Array of Strings
+country: String
+interests: Array of Strings
+userPhotoUrl: String
+posts: ObjectId 
+```
+### Post
+```
+postPhotoUrl: String
+owner: ObjectId 
+title: String
+description: String
+tags: Array of Strings
+date: Date
+```
 ## Links
 
 ### Trello
@@ -54,10 +79,4 @@
 
 ### Slides
 
-
 [Slides Link](https://slides.com/pablodellacassa/minimal/fullscreen)
-
-
-
-
-
