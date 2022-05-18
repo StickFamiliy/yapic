@@ -1,30 +1,42 @@
-<h1>Create a new post</h1>
-<br /><br />
-<div class="post-container">
-  <form action="/post/new" method="POST" enctype="multipart/form-data">
-    <label><strong>Title:</strong></label>
-    <input type="text" name="title" required />
-    <br /><br />
-    <label for="inputEmail" class="sr-only">Email address</label>
+<div class="postnew-container">
+  <div>
+  <h1>Create a new post</h1>
+  </div>
+  <div class="postnew-div">
+    <form action="/post/new" method="POST" enctype="multipart/form-data">
 
-    <label><strong>Description:</strong></label>
-    <textarea type="text" name="description" required></textarea>
-    <br /><br />
+      <div>
+        <label><strong>Title:</strong></label>
+        <input type="text" name="title" required />
+      </div>
 
-    <label><strong>Image:</strong></label>
-    <input type="file" name="postPhotoUrl" />
-    <br /><br />
+      <div>
+        <label for="inputEmail" class="sr-only">Email address</label>
+      </div>
 
-    <label for="tags">
-      <strong>Tags:</strong>
-      <select name="tags" id="tags" multiple>
-        {{#each enumOptions}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
-      </select>
-    </label>
+      <div>
+        <label><strong>Description:</strong></label>
+        <textarea type="text" name="description" required></textarea>
+      </div>
 
-    <button type="submit">Create</button>
+      <div>
+        <label><strong>Image:</strong></label>
+        <input type="file" name="postPhotoUrl" />
+      </div>
 
-  </form>
-</div>
+      <div>
+        <label for="tags">
+          <strong>Tags:</strong>
+          <select name="tags" id="tags" multiple>
+            {{#each enumOptions}}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+        </label>
+      </div>
+      <div>
+        <button type="submit">Create</button>
+      </div>
+
+    </form>
+  </div>

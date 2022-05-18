@@ -1,83 +1,70 @@
-<br />
-
-<h1>Hi, {{user.username}}!</h1>
-
-<br />
-
-<div>
-
+<div class="profile-container">
+  <h1>Hi, {{user.username}}!</h1>
   <form action="/profile/{{_id}}" method="POST" enctype="multipart/form-data">
-
-    <img id="profile-img" src="{{user.userPhotoUrl}}" alt="profile-img" />
-    <br />
-    <br />
-    <input type="file" name="userPhotoUrl" />
-
-    <br />
-
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input
+    <div>
+      <img id="profile-img" src="{{user.userPhotoUrl}}" alt="User-img" />
+    </div>
+    <div>
+      <input type="file" name="userPhotoUrl" />
+    </div>
+    <div>
+      <label for="exampleInputEmail1">Email</label>
+     <input
         type="email"
         class="form-control"
         id="input-email"
         aria-describedby="emailHelp"
         value="{{user.email}}"
       />
-   
+      <small id="emailHelp" class="form-text text-muted">We'll never share your
+        email with anyone else.</small>
     </div>
-
-    <br />
-
-    <label for="usernamme">
-      <h4>Username</h4>
-      <input type="text" name="username" value="{{user.username}}" />
-    </label>
-
-    <br />
-
-    <label for="age">
-      <h4>Age</h4>
-      <input type="text" name="age" value="{{user.age}}" />
-    </label>
-
-    <br />
-
-    <label for="genre">
-      <h4>Genre</h4>
-      <input type="text" name="genre" value="{{user.genre}}" />
-    </label>
-
-    <br />
-
-    <label for="country">
-      <h4>Country</h4>
-      <input type="text" name="country" value="{{user.country}}" />
-    </label>
-
-    <br />
-
-    <label for="interests">
-      <h4>Interests</h4>
-      <select name="interests" id="interests" multiple>
-        {{#each enumOptions}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
-      </select>
-    </label>
-
-    <br /><br />
-
-      <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-    <br /><br />
-
+    <div>
+      <label for="usernamme">
+        <h4>Username</h4>
+        <input type="text" name="username" value="{{user.username}}" />
+      </label>
+    </div>
+    <div>
+      <label for="age">
+        <h4>Age</h4>
+        <input type="text" name="age" value="{{user.age}}" />
+      </label>
+    </div>
+    <div>
+      <label for="genre">
+        <h4>Genre</h4>
+        <input type="text" name="genre" value="{{user.genre}}" />
+      </label>
+    </div>
+    <div>
+      <label for="country">
+        <h4>Country</h4>
+        <input type="text" name="country" value="{{user.country}}" />
+      </label>
+    </div>
+    <div>
+      <label for="interests">
+        <h4>Interests</h4>
+        <select name="interests" id="interests" multiple>
+          {{#each enumOptions}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select>
+      </label>
+    </div>
+    <div>
+      <button type="submit">Update</button>
+    </div>
   </form>
 
+  <form>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
 </div>
-
-<br /><br />
-
-
-

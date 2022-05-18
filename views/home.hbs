@@ -1,35 +1,36 @@
-<h1>Your posts:</h1>
-<br>
+<div class="title-cards">
+  <h1>{{user.username}}'s Home</h1>
+</div>
+
+<div class="post-cards">
   {{#each user.posts}}
-
-    <h4>Title: {{title}}</h4>
-    <h4>Date: {{formatDate date}}</h4>
-
-     
-    <h4>Description: {{description}}<h4> 
-  
-
-    <img class="post-img" src="{{postPhotoUrl}}" alt="{{title}}" />
-    <p></p>
-    <p>Tags: {{tags}}</p>
-    
-    <form action="/post/delete/{{_id}}" method="POST">
-    <button class="btn btn-delete" type="submit">
-    <span class="mdi mdi-delete mdi-24px"></span>
-    <span class="mdi mdi-delete-empty mdi-24px"></span>
-    <span>Delete post</span>  
-    </button>
-    </form>
-    <hr class="hr-post">
+    <div class="single-card">
+      <img class="post-img {{_id}}" src="{{postPhotoUrl}}" alt="{{title}}" />
+      <div class="text-card">
+        <h4>{{title}}</h4>
+        <h4>{{user.email}}</h4>
+        <p>{{description}}</p>
+        {{#each　tags}}
+          <p>{{this}}</p>
+        {{/each}}
+        <form action="/post/delete/{{_id}}" method="POST">
+          <button class="btn btn-delete" type="submit">
+          <span class="mdi mdi-delete mdi-24px"></span>
+          <span class="mdi mdi-delete-empty mdi-24px"></span>
+          <span>Delete post</span>  
+          </button>
+        </form>
+        <hr class="hr-post">
+      </div>
+    </div>
   {{/each}}
+</div>
 
-<h1>Your matches:</h1>
-
-<br>
-
-{{#each myMatches}}
-<a href="/match/{{this._id}}"><img src="{{userPhotoUrl}}" alt="match-img"></a>
-<h4>Name: {{username}}</h4>
-<h4>Age: {{age}}</h4>
-<h4>Country: {{country}}</h4>
-{{/each}}
+<div class="match-scroller">
+  {{#each myMatches}}
+    <div class="match-card">
+      <img src="{{userPhotoUrl}}" alt="match-img" />
+      <p>matched with {{username}}</p>
+    </div>
+  {{/each}}
+</div>
