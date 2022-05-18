@@ -45,25 +45,31 @@
 ## Models
 
 ### User
-```
+
+```javascript
+{
 username: String
 password: String
 email: String
 age: String
-genre: Array of Strings
+genre: [Strings]
 country: String
-interests: Array of Strings
+interests: [Strings]
 userPhotoUrl: String
 posts: ObjectId 
+}
 ```
 ### Post
-```
+
+```javascript
+{
 postPhotoUrl: String
 owner: ObjectId 
 title: String
 description: String
-tags: Array of Strings
+tags: [Strings]
 date: Date
+}
 ```
 ## Links
 
@@ -80,3 +86,11 @@ date: Date
 ### Slides
 
 [Slides Link](https://slides.com/pablodellacassa/minimal/fullscreen)
+
+### Contributors
+
+Pablo Dellacassa - [`<github>`](https://github.com/pablodellacassa) - [`<linkedin>`](https://www.linkedin.com/in/pablodellacassa)
+
+Alberte Vieites - [`<github>`](https://github.com/albertevieites) - [`<linkedin>`](https://www.linkedin.com/in/albertevieites/)
+
+
