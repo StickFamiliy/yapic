@@ -245,7 +245,7 @@ router
 /* GET and POST new post */
 router
   .route("/post/new")
-  .get((req, res, next) => res.render("post-creation", { enumOptions }))
+  .get((req, res, next) => res.render("post-creation", { enumOptions: enumOptions , user: req.session.currentUser}))
   .post(fileUploader.single("postPhotoUrl"), (req, res) => {
     // Get the user id from the session
     const currentUser = req.session.currentUser;
