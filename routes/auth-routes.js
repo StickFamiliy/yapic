@@ -8,6 +8,7 @@ const saltRounds = process.env.SALT || 10;
 const User = require('./../models/User.model'); 
 
 const isNotLoggedIn = require('./../middlewares/isNotLoggedIn');
+const isLoggedIn = require('../middlewares/isLoggedIn');
 
 router.get('/signup', isNotLoggedIn, (req, res) => {
 	res.render('auth/signup');
@@ -54,7 +55,6 @@ router.get('/login', isNotLoggedIn, (req, res, next) => {
 });
 
 router.post('/login', isNotLoggedIn, (req, res) => {
-	
 	// Get values form form
 	const {email, password } = req.body;
 

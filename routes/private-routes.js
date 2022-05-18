@@ -177,7 +177,7 @@ const enumOptions = [
 ]
 
 router.get("/profile/:id", isLoggedin, (req, res) => {
-  const id = req.params.id
+  const id = req.params.id;
   res.render("private/profile", { user: req.session.currentUser, enumOptions })
 });
 

@@ -1,71 +1,73 @@
-<br />
-
-<h1>Hi, my name is{{user.username}}!</h1>
-
-<br /><br />
+<h1>{{username}} Profile</h1>
 
 <div>
 
-  <form action="/profile/{{_id}}" method="POST" enctype="multipart/form-data">
+  <form action="/match/{{_id}}" method="POST" enctype="multipart/form-data">
 
-    <h4>Photo</h4>
-    <img id="profile-img" src="{{user.userPhotoUrl}}" alt="User-img" />
-    <br />
-    <br />
-    <input type="file" name="userPhotoUrl" />
+    <img id="profile-img" src="{{userPhotoUrl}}" alt="User-img" />
 
-    <br /><br />
-
-    <label for="email">
-      <h4>Email</h4>
-      <input type="text" name="email" value="{{user.email}}" />
-    </label>
-
-    <br /><br />
-
-    <label for="usernamme">
-      <h4>Username</h4>
-      <input type="text" name="username" value="{{user.username}}" />
-    </label>
-
-    <br /><br />
-
-    <label for="age">
+    <div>
       <h4>Age</h4>
-      <input type="text" name="age" value="{{user.age}}" />
-    </label>
+      <p>{{age}}</p> 
+    </div>
 
-    <br /><br />
-
-    <label for="genre">
+     <div>
       <h4>Genre</h4>
-      <input type="text" name="genre" value="{{user.genre}}" />
-    </label>
+      <p>{{genre}}</p>
+    </div>
 
-    <br /><br />
-
-    <label for="country">
+    <div>
       <h4>Country</h4>
-      <input type="text" name="country" value="{{user.country}}" />
-    </label>
+      <p>{{country}}</p>
+    </div> 
 
-    <br /><br />
-
-    <label for="interests">
+    <div>
       <h4>Interests</h4>
-      <select name="interests" id="interests" multiple>
-      {{#each enumOptions}}
-      <option value="{{this}}">{{this}}</option>
-      {{/each}}
-      </select>
-    </label>
+        {{#each interests}}
+          <p>{{this}}</p>
+        {{/each}}
+    </div>
 
-    <br /><br />
+    <br> <br>
 
-    <button type="submit">Update</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="match-message">Send a message</button>
+
+</form>
 
     <br /><br />
 
   </form>
 
+</div>
+
+<br /><br />
+
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Get in touch with  <strong>{{username}}</strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+        
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text">Hi, how are you? Let's chat &#128512; </textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
 </div>
