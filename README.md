@@ -55,7 +55,7 @@
 ### Slides
 
 
-[Slides Link]([https://slides.com/evapanizo/poke-trade](https://slides.com/pablodellacassa/minimal/fullscreen))
+[Slides Link](https://slides.com/pablodellacassa/minimal/fullscreen)
 
 
 
