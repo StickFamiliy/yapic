@@ -4,7 +4,7 @@
 
 ## Description
 
-**YaPIC** is a photo sharing app which helps users to conect each other based on the type of photo taken (tags) and their similar interests (shortlist). When users start to upload photos and make a collection they will see a section with their stuff and another one with their matchs. Then they will have the possibility to see their user match profiles and get in touch through a form (sender username and email is shared in submit).
+**YaPIC** is a photo sharing community which helps users to connect each other based on the type of photo taken (tags) and their similar interests (shortlist). When users start to upload photos and make a collection they will see a section with their stuff and another one with their matches. Then they will have the possibility to see their user match profiles and get in touch through a form (sender username and email is shared in submit).
 
 ## User Stories
 
