@@ -14,6 +14,7 @@
   --main-pink: #f06292;
   --dark-pink: #ba2d65;
   --ligth-pink: #ff94c2;
+  --paragraph-size: 1.2rem;
   margin: 0;
   padding: 0;
 }
@@ -130,6 +131,19 @@ nav {
   align-items: center;
   align-content: center;
   height: 70vh;
+  gap: 1rem;
+}
+
+.loginForm{
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginBtn{
+  background-color: var(--ligth-pink);
 }
 /* END OF LOGIN.hbs                     */
 /* <----------------------------------> */
@@ -143,6 +157,7 @@ nav {
   align-items: center;
   align-content: center;
   height: 70vh;
+  gap: 1rem;
 }
 /* END OF SIGNUP.hbs                     */
 /* <----------------------------------> */
@@ -195,8 +210,8 @@ nav {
   grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
 }
 
-.card-content p {
-  display: inline-block;
+.card-content {
+  overflow:auto;
 }
 
 .single-card {
@@ -262,7 +277,7 @@ nav {
   margin-bottom: 2rem;
 }
 
-.match-card > img{
+.match-card img{
   height: 20rem;
   border-radius: 50%;
   object-fit: cover;
@@ -270,6 +285,10 @@ nav {
 
 .match-card p {
   text-align: center;
+}
+
+.post-description {
+  
 }
 
 
@@ -301,6 +320,24 @@ nav {
   background-color: var(--yellow);
   color: var(--dark-blue);
 }
+
+/* PROFILE.hbs PAGE */
+.match-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.match-div p {
+  font-size: ;
+}
+
+/* END OF PROFILE.hbs                     */
+/* <----------------------------------> */
+
 /* FOOTER */
 footer {
   display: flex;
