@@ -1,37 +1,40 @@
-<div class="login-container">
-  <h1>Hi again!</h1>
-  <h4>You've been missed!</h4>
-  <form action="/login" method="POST">
-    <div class="form-group">
-      <label for="email">Email: </label>
-      <input
-        type="email"
-        class="form-control"
-        name="email"
-        id="email"
-        required
-        placeholder="name@mail.com"
-      />
-    </div>
+<div class="loginParent">
+  <div class="login-container">
+    <h1>Hi again!</h1>
+    <h4>You've been missed!</h4>
+    <form action="/login" method="POST" class="loginForm">
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          id="email"
+          required
+          placeholder="name@mail.com"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        class="form-control"
-        name="password"
-        id="password"
-        required
-        placeholder="********"
-      />
-    </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          id="password"
+          required
+          placeholder="********"
+        />
+      </div>
+      <div>
+        <button class="btn loginBtn" type="submit">Login</button>
+      </div>
+    </form>
 
-    <button class="btn btn-primary" type="submit">Login</button>
-  </form>
+    <span>Don't have an account? <a href="/signup">Register</a></span>
 
-  <span>Don't have an account? <a href="/signup">Register</a></span>
-
-  {{#if errorMessage}}
-    <p class="alert alert-danger"><b>{{errorMessage}}</b></p>
-  {{/if}}
+    {{#if errorMessage}}
+      <p class="alert alert-danger"><b>{{errorMessage}}</b></p>
+    {{/if}}
+  </div>
 </div>

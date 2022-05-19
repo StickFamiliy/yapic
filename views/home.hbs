@@ -6,21 +6,21 @@
   {{#each user.posts}}
     <div class="single-card">
       <img class="post-img {{_id}}" src="{{postPhotoUrl}}" alt="{{title}}" />
-      <div class="text-card">
+      <div class="card-content">
         <h4>{{title}}</h4>
-        <h4>{{user.email}}</h4>
-        <p>{{description}}</p>
-        {{#each　tags}}
-          <p>{{this}}</p>
+        <div >
+          <p class="post-description">{{description}}</p>
+        </div>
+        {{#each tags}}
+          <span class="span-tags"><p>{{this}}</p></span>
         {{/each}}
         <form action="/post/delete/{{_id}}" method="POST">
           <button class="btn btn-delete" type="submit">
-          <span class="mdi mdi-delete mdi-24px"></span>
-          <span class="mdi mdi-delete-empty mdi-24px"></span>
-          <span>Delete post</span>  
+            <span class="mdi mdi-delete"></span>
+            <span class="mdi mdi-delete-empty"></span>
+            <span>Delete</span>
           </button>
         </form>
-        <hr class="hr-post">
       </div>
     </div>
   {{/each}}
@@ -29,7 +29,10 @@
 <div class="match-scroller">
   {{#each myMatches}}
     <div class="match-card">
-      <img src="{{userPhotoUrl}}" alt="match-img" />
+      <a href="/match/{{_id}}"><img
+          src="{{userPhotoUrl}}"
+          alt="match-img"
+        /></a>
       <p>matched with {{username}}</p>
     </div>
   {{/each}}

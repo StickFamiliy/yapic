@@ -1,5 +1,6 @@
-<div class="signup-container">
-<h1>Sign up to YaPIC</h1>
+<div class="signupParent">
+  <div class="signup-container">
+<h1>Sign up to yapic</h1>
 <h4>Share your photos and start meeting people! </h4>
   <div class="form-group" >
     <label for="username">Username: </label>
@@ -15,8 +16,9 @@
     <label for="password">Password:</label>
     <input type="password" class="form-control" name="password" id="password" required placeholder="********" />
   </div>
-
+<div>
     <button class="btn btn-primary" type="submit">Register</button>
+</div>
   
 </form>
 <span>Already a member? <a href="/signup">Login</a></span>
@@ -24,4 +26,5 @@
 {{#if errorMessage}}
   <p class="alert alert-danger"><b>{{errorMessage}}</b></p>
 {{/if}}
+</div>
 </div>

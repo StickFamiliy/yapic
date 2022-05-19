@@ -6,33 +6,78 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{title}}</title>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+    ></script>
+    <script
+      src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
   <body>
     <nav class="nav-bar">
       {{#if user}}
-      <a href="/home/{{user._id}}"><img id="yapic-logo" src="http://localhost:3000/images/yapic-icon.png" alt="yapic-logo" /></a>
-      <a href="/home/{{user._id}}">
-      <a href="/post/new">Create post</a>
-      <div class="dropdown">
-        <a href="#" id="imageDropdown" data-toggle="dropdown">
-        <img id="avatar" src="{{user.userPhotoUrl}}">
-        </a>
-        <ul class="dropdown-menu dd-style" role="menu" aria-labelledby="imageDropdown">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/profile/{{user._id}}">Profile</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Logout</a></li>
-        </ul>
-      </div>
+          <div class="logo-home">
+            <a href="/home/{{user._id}}"><img
+                class="yapic-letters"
+                src="http://localhost:3000/images/yapic-letters.png"
+                alt="yapic-logo"
+              /></a>
+            <a href="/home/{{user._id}}"></a>
+          </div>
+          <div class="post-button">
+            <a href="/post/new">Create post</a>
+          </div>
+          <div class="dropdown">
+            <a href="#" id="imageDropdown" data-toggle="dropdown">
+              <img id="avatar" src="{{user.userPhotoUrl}}" />
+            </a>
+            <ul
+              class="dropdown-menu dd-style"
+              role="menu"
+              aria-labelledby="imageDropdown"
+            >
+              <li role="presentation"><a
+                  role="menuitem"
+                  tabindex="-1"
+                  href="/profile/{{user._id}}"
+                >Profile</a></li>
+              <li role="presentation"><a
+                  role="menuitem"
+                  tabindex="-1"
+                  href="/logout"
+                >Logout</a></li>
+            </ul>
+          </div>
+        </div>
       {{else}}
-      <a href="/"><img id="yapic-logo" src="http://localhost:3000/images/yapic-icon.png" alt="yapic-logo" /></a>
-      <a href="/login">Login</a>
-      <a href="/signup">Signup</a>
+        <a href="/"><img
+            class="yapic-letters"
+            src="http://localhost:3000/images/yapic-letters.png"
+            alt="yapic-letters"
+          /></a>
+        <div class="nav-buttons">
+          <div class="login">
+            <a href="/login">Login</a>
+          </div>
+          <div class="signup">
+            <a href="/signup">Signup</a>
+          </div>
       {{/if}}
     </nav>
 
@@ -45,14 +90,18 @@
         <p><small>&copy; Copyright 2022 PELOTUDOS Labs</small></p>
       </div>
       <div class="fa-icons">
-        <a href="#" class="fa fa-facebook"></a>  
-        <a href="#" class="fa fa-twitter"></a>  
-        <a href="#" class="fa fa-instagram"></a>  
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
       </div>
     </footer>
 
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"> </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    > </script>
     <script src="/js/script.js"></script>
 
   </body>
