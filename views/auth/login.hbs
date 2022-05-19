@@ -26,13 +26,12 @@
           placeholder="********"
         />
       </div>
+      
       <div>
         <button class="btn loginBtn" type="submit">Login</button>
       </div>
     </form>
-
     <span>Don't have an account? <a href="/signup">Register</a></span>
-
     {{#if errorMessage}}
       <p class="alert alert-danger"><b>{{errorMessage}}</b></p>
     {{/if}}

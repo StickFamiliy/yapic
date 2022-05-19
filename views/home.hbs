@@ -7,13 +7,17 @@
     <div class="single-card">
       <img class="post-img {{_id}}" src="{{postPhotoUrl}}" alt="{{title}}" />
       <div class="card-content">
-        <h4>{{title}}</h4>
-        <div >
-          <p class="post-description">{{description}}</p>
+        <div class="text-cards">
+          <h4>{{title}}</h4>
+          <div>
+            <p class="post-description">{{description}}</p>
+          </div>
         </div>
+          <div class="div-tags">
         {{#each tags}}
-          <span class="span-tags"><p>{{this}}</p></span>
+            <span class="span-tags"><p>{{this}}</p></span>
         {{/each}}
+          </div>
         <form action="/post/delete/{{_id}}" method="POST">
           <button class="btn btn-delete" type="submit">
             <span class="mdi mdi-delete"></span>
