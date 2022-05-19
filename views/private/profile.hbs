@@ -1,14 +1,13 @@
-<div class="profile-container">
-  <div class="editing-profile">
+<div class="profileParent">
+  <div class="editing-profile-container">
     <h1>Hi, {{user.username}}!</h1>
-    <form action="/profile/{{_id}}" method="POST" enctype="multipart/form-data">
-      <div>
+    <form action="/profile/{{_id}}" method="POST" enctype="multipart/form-data" class="editProfileForm">
+      <div class="form-group">
         <img id="profile-img" src="{{user.userPhotoUrl}}" alt="User-img" />
-      </div>
-      <div>
         <input type="file" name="userPhotoUrl" />
       </div>
-      <div>
+
+      <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
         <input
           type="email"
@@ -20,31 +19,36 @@
         <small id="emailHelp" class="form-text text-muted">We'll never share
           your email with anyone else.</small>
       </div>
-      <div>
+
+      <div class="form-group">
         <label for="usernamme">
-          <h4>Username</h4>
+          Username
           <input type="text" name="username" value="{{user.username}}" />
         </label>
       </div>
-      <div>
+
+      <div class="form-group">
         <label for="age">
-          <h4>Age</h4>
+          Age
           <input type="text" name="age" value="{{user.age}}" />
         </label>
       </div>
-      <div>
+
+      <div class="form-group">
         <label for="genre">
-          <h4>Genre</h4>
+          Genre
           <input type="text" name="genre" value="{{user.genre}}" />
         </label>
       </div>
-      <div>
+
+      <div class="form-group">
         <label for="country">
           <h4>Country</h4>
           <input type="text" name="country" value="{{user.country}}" />
         </label>
       </div>
-      <div>
+
+      <div class="form-group">
         <label for="interests">
           <h4>Interests</h4>
           <select name="interests" id="interests" multiple>
@@ -54,8 +58,9 @@
           </select>
         </label>
       </div>
+
       <div>
-        <button type="submit">Update</button>
+        <button type="submit" class="btn profileBtn">Update</button>
       </div>
     </form>
 

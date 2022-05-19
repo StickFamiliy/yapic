@@ -1,30 +1,50 @@
 <div class="signupParent">
   <div class="signup-container">
-<h1>Sign up to yapic</h1>
-<h4>Share your photos and start meeting people! </h4>
-  <div class="form-group" >
-    <label for="username">Username: </label>
-    <input type="text" class="form-control" name="username" id="username" required />
-  </div>
-  
-  <div class="form-group" >
-    <label for="email">Email: </label>
-    <input type="email" class="form-control" name="email" id="email" required placeholder="name@mail.com" />
-  </div>
-  
-  <div class="form-group" >
-    <label for="password">Password:</label>
-    <input type="password" class="form-control" name="password" id="password" required placeholder="********" />
-  </div>
-<div>
-    <button class="btn btn-primary" type="submit">Register</button>
-</div>
-  
-</form>
-<span>Already a member? <a href="/signup">Login</a></span>
+    <h1>Sign up to yapic</h1>
+    <h4>Share your photos and start meeting people! </h4>
+    <form action="/signup" method="POST" class="signupForm">
+      <div class="form-group">
+        <label for="username">Username: </label>
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          id="username"
+          required
+        />
+      </div>
 
-{{#if errorMessage}}
-  <p class="alert alert-danger"><b>{{errorMessage}}</b></p>
-{{/if}}
-</div>
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          id="email"
+          required
+          placeholder="name@mail.com"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          id="password"
+          required
+          placeholder="********"
+        />
+      </div>
+      <div>
+        <button class="btn signupBtn" type="submit">Register</button>
+      </div>
+
+    </form>
+    <span>Already a member? <a href="/signup">Login</a></span>
+    {{#if errorMessage}}
+      <p class="alert alert-danger"><b>{{errorMessage}}</b></p>
+    {{/if}}
+  </div>
 </div>

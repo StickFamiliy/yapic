@@ -14,7 +14,17 @@
   --main-pink: #f06292;
   --dark-pink: #ba2d65;
   --ligth-pink: #ff94c2;
+
+  --h1-font-size: 3rem;
+  --medium-h-font-size: 1.5rem;
+  --label-size: 1.3rem;
   --paragraph-size: 1.2rem;
+
+  --small-gap: 1rem;
+  --medium-gap: 1.5rem;
+  --medium-large-gap: 2rem;
+  --large-gap: 4rem;
+
   margin: 0;
   padding: 0;
 }
@@ -98,7 +108,7 @@ nav {
 
 .nav-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--medium-gap);
 }
 
 #avatar {
@@ -111,14 +121,6 @@ nav {
   border-radius: 5%;
   width: 200px;
 }
-
-.main-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 /* END OF INDEX.hbs                     */
 /* <----------------------------------> */
 
@@ -131,7 +133,7 @@ nav {
   align-items: center;
   align-content: center;
   height: 70vh;
-  gap: 1rem;
+  gap: var(--small-gap);
 }
 
 .loginForm{
@@ -157,7 +159,18 @@ nav {
   align-items: center;
   align-content: center;
   height: 70vh;
-  gap: 1rem;
+  gap: var(--small-gap);
+}
+.signupForm{
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signupBtn {
+  background-color: var(--ligth-pink);
 }
 /* END OF SIGNUP.hbs                     */
 /* <----------------------------------> */
@@ -171,13 +184,65 @@ nav {
   align-items: center;
   align-content: center;
   height: 70vh;
+  gap: var(--small-gap);
+}
+
+.postnewForm {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--medium-gap);
+}
+
+.createBtn {
+  background-color: var(--ligth-pink);
+  color:var(--dark-blue);
+}
+
+.inp {
+  text-align: center;
+  margin: auto;
+}
+
+input[type="file"] {
+  width: 10rem;
+}
+
+option {
+  color: var(--dark-blue)
+}
+
+option:focus {
+  outline: none !important;
+}
+
+textarea {
+  color: var(--dark-blue)
+}
+
+textarea:focus {
+  outline: none !important;
+}
+
+input {
+  color: var(--dark-blue);
+}
+
+input:focus {
+  outline: none !important;
+}
+
+select:focus{
+  outline: none;
 }
 /* END OF POSTNEW.hbs                     */
 /* <----------------------------------> */
 
 
 /* PROFILE.hbs PAGE */
-.profile-container {
+.editing-profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,13 +270,13 @@ nav {
 .post-cards {
   margin: 8rem;
   display: grid;
-  gap: 4rem;
+  gap: var(--large-gap);
   grid-auto-rows: 60rem;
   grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
 }
 
-.card-content {
-  overflow:auto;
+.post-cards h1 {
+  font-size: var(--medium-h-font-size);
 }
 
 .single-card {
@@ -235,7 +300,27 @@ nav {
 }
 
 .card-content {
-  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.div-tags {
+  display: flex;
+  height: 2%;
+}
+
+.label-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-card form {
+  height: 5%;
+  margin: 5% 0;
 }
 
 .card-content h4 {
@@ -259,7 +344,7 @@ nav {
   grid-auto-flow: column;
   align-items: center;
   grid-auto-columns: 21%;
-  gap: 3rem;
+  gap: var(--medium-large-gap);
 
   padding: 3rem 1rem 6rem 0;
 
@@ -271,7 +356,7 @@ nav {
   display: grid;
   grid-template-rows: min-content;
   justify-items: center;
-  gap: 3rem;
+  gap: var(--medium-large-gap);
   padding: 3rem;
   border-radius: 50%;
   margin-bottom: 2rem;
@@ -288,9 +373,9 @@ nav {
 }
 
 .post-description {
-  
+  height: 5rem;
+  overflow: scroll;
 }
-
 
 /*DELETE BUTTON FOR POSTS */
 .btn-delete{
@@ -317,8 +402,9 @@ nav {
 }
 
 .btn:hover {
-  background-color: var(--yellow);
-  color: var(--dark-blue);
+  background-color: var(--ligth-pink);
+  color: var(--white);
+  border: none;
 }
 
 /* PROFILE.hbs PAGE */
@@ -327,7 +413,7 @@ nav {
   flex-direction: column;
   align-items: center;
   align-content: center;
-  gap: 1rem;
+  gap: var(--small-gap);
   text-align: center;
 }
 
@@ -360,7 +446,7 @@ footer > div {
 
 footer .fa-icons {
   display: flex;
-  gap: 4rem;
+  gap: var(--large-gap);
   font-size: 2rem;
 }
 
