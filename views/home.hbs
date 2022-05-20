@@ -22,7 +22,7 @@
           <button class="btn btn-delete" type="submit">
             <span class="mdi mdi-delete"></span>
             <span class="mdi mdi-delete-empty"></span>
-            <span>Delete</span>
+            <span>DELETE</span>
           </button>
         </form>
       </div>
@@ -30,14 +30,14 @@
   {{/each}}
 </div>
 
-<div class="match-scroller">
+<div class="match-scroller snaps-inline">
   {{#each myMatches}}
     <div class="match-card">
       <a href="/match/{{_id}}"><img
           src="{{userPhotoUrl}}"
           alt="match-img"
         /></a>
-      <p>matched with {{username}}</p>
+      <p>Matched with {{username}}</p>
     </div>
   {{/each}}
 </div>
