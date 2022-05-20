@@ -1,55 +1,33 @@
 <div class="profileParent">
-  <div class="editing-profile-container">
     <h1>Hi, {{user.username}}!</h1>
-    <form action="/profile/{{_id}}" method="POST" enctype="multipart/form-data" class="editProfileForm">
-      <div class="form-group">
+    <form action="/profile/{{_id}}" method="POST" enctype="multipart/form-data" class="postnewForm">
+      <div class="form-group" style="display: flex;flex-direction: column;align-items: center;gap: 1rem;">
         <img id="profile-img" src="{{user.userPhotoUrl}}" alt="User-img" />
         <input type="file" name="userPhotoUrl" />
       </div>
 
-      <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
         <input
           type="email"
-          class="form-control"
           id="input-email"
           aria-describedby="emailHelp"
           value="{{user.email}}"
         />
-        <small id="emailHelp" class="form-text text-muted">We'll never share
-          your email with anyone else.</small>
-      </div>
 
-      <div class="form-group">
-        <label for="usernamme">
-          Username
-          <input type="text" name="username" value="{{user.username}}" />
-        </label>
-      </div>
+    
+        <label for="usernamme">Username</label>
+        <input type="text" name="username" value="{{user.username}}" />
+    
+        <label for="age">Age</label>
+        <input type="text" name="age" value="{{user.age}}" />
+        
+        <label for="genre">Genre</label>
+        <input type="text" name="genre" value="{{user.genre}}" />
+        
+        <label for="country">Country</label>
+        <input type="text" name="country" value="{{user.country}}" />
 
-      <div class="form-group">
-        <label for="age">
-          Age
-          <input type="text" name="age" value="{{user.age}}" />
-        </label>
-      </div>
-
-      <div class="form-group">
-        <label for="genre">
-          Genre
-          <input type="text" name="genre" value="{{user.genre}}" />
-        </label>
-      </div>
-
-      <div class="form-group">
-        <label for="country">
-          <h4>Country</h4>
-          <input type="text" name="country" value="{{user.country}}" />
-        </label>
-      </div>
-
-      <div class="form-group">
-        <label for="interests">
+        <label for="interests" class="label-flex">
           <h4>Interests</h4>
           <select name="interests" id="interests" multiple>
             {{#each enumOptions}}
@@ -57,7 +35,6 @@
             {{/each}}
           </select>
         </label>
-      </div>
 
       <div>
         <button type="submit" class="btn profileBtn">Update</button>
@@ -69,8 +46,8 @@
         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
       </div>
-      <div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="submitProfile">
+        <button type="submit" class="btn btn-primary profileSubBtn">Submit</button>
       </div>
     </form>
   </div>
