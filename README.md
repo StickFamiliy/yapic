@@ -1,10 +1,9 @@
-<img src="https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png" width="200"/> &nbsp; <img src="https://i.ibb.co/txcgFGM/yapic.png" width="200"/>
-
-# YaPIC: Posts photos, meet people
+# **yapic**
+## POSTS PHOTOS & MEET PEOPLE
 
 ## Description
 
-**YaPIC** is a photo sharing community which helps users to connect each other based on the type of photo taken (tags) and their similar interests (shortlist). When users start to upload photos and make a collection they will see a section with their stuff and another one with their matches. Then they will have the possibility to see their user match profiles and get in touch through a form (sender username and email is shared in submit).
+**yapic** is a photo sharing community which helps users to connect each other based on the type of photo taken (tags) and their similar interests (shortlist). When users start to upload photos and make a collection they will see a section with their stuff and another one with their matches. Then they will have the possibility to see their user match profiles and get in touch through a form (sender username and email is shared in submit).
 
 ## User Stories
 
@@ -73,24 +72,9 @@ date: Date
 ```
 ## Links
 
-### Trello
-
-[Trello link](https://trello.com/b/Yj5pkX4s/project-2-dellacassa-veites)
-
-### Git
-
-[Repository Link](https://github.com/StickFamiliy/yapic)
-
-[Deploy Link](https://poketradeih.herokuapp.com/)
-
-### Slides
-
-[Slides Link](https://slides.com/pablodellacassa/minimal/fullscreen)
+[Deploy Link](albertevieites-yapic.herokuapp.com/)
 
 ### Contributors
-
-Pablo Dellacassa - [`<github>`](https://github.com/pablodellacassa) - [`<linkedin>`](https://www.linkedin.com/in/pablodellacassa)
-
 Alberte Vieites - [`<github>`](https://github.com/albertevieites) - [`<linkedin>`](https://www.linkedin.com/in/albertevieites/)
 
-
+Pablo Dellacassa - [`<github>`](https://github.com/pablodellacassa) - [`<linkedin>`](https://www.linkedin.com/in/pablodellacassa)
